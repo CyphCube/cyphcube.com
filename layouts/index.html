@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Site.Title }} &mdash; {{ .Site.Params.tagline }}</title>
+  <meta name="description" content="{{ .Site.Params.description }}">
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+
+  <header class="hero">
+    <nav class="topnav">
+      <span class="logo">
+        <span class="logo-mark" aria-hidden="true"></span>
+        CyphCube
+      </span>
+      <a class="nav-link" href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+
+    <div class="hero-content">
+      <h1>CyphCube</h1>
+      <p class="tagline">{{ .Site.Params.tagline }}</p>
+      <p class="lede">{{ .Site.Params.description }}</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">View Projects</a>
+        <a class="btn btn-secondary" href="mailto:{{ .Site.Params.email }}">Get in Touch</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="projects" class="projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        {{ range .Site.Params.projects }}
+        <a class="project-card" href="{{ .link }}" target="_blank" rel="noopener">
+          <div class="project-card-top">
+            <h3>{{ .name }}</h3>
+            <span class="status">{{ .status }}</span>
+          </div>
+          <p>{{ .description }}</p>
+        </a>
+        {{ end }}
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="logo-mark small" aria-hidden="true"></span>
+      <span>&copy; {{ now.Year }} CyphCube</span>
+      <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+    </div>
+  </footer>
+
+</body>
+</html>

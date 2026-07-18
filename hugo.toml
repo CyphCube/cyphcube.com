@@ -1,0 +1,32 @@
+baseURL = "https://cyphcube.com/"
+languageCode = "en-us"
+title = "CyphCube"
+
+[params]
+  tagline = "Infrastructure for the onchain era."
+  description = "CyphCube is a blockchain development studio building protocols, tooling, and infrastructure for the decentralized web."
+  github = "https://github.com/CyphCube"
+  email = "hello@cyphcube.com"
+
+[[params.projects]]
+  name = "Cube Protocol"
+  description = "A modular settlement layer for high-throughput onchain applications."
+  status = "In development"
+  link = "https://github.com/CyphCube"
+
+[[params.projects]]
+  name = "Vault SDK"
+  description = "Developer tooling for secure key management and transaction signing."
+  status = "In development"
+  link = "https://github.com/CyphCube"
+
+[[params.projects]]
+  name = "Latticework"
+  description = "Cross-chain messaging infrastructure for composable protocols."
+  status = "Research"
+  link = "https://github.com/CyphCube"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
