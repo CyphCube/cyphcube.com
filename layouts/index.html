@@ -6,14 +6,14 @@
   <title>{{ .Site.Title }} &mdash; {{ .Site.Params.tagline }}</title>
   <meta name="description" content="{{ .Site.Params.description }}">
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
-  <link rel="icon" href="data:,">
+  <link rel="icon" type="image/png" href="{{ "images/favicon.png" | relURL }}">
 </head>
 <body>
 
   <header class="hero">
     <nav class="topnav">
       <a class="logo" href="{{ "/" | relURL }}">
-        <span class="logo-mark" aria-hidden="true"></span>
+        <img class="logo-mark" src="{{ "images/logo.png" | relURL }}" alt="" aria-hidden="true">
         CyphCube
       </a>
       <div class="nav-links">
@@ -69,7 +69,7 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <span class="logo-mark small" aria-hidden="true"></span>
+      <img class="logo-mark small" src="{{ "images/logo.png" | relURL }}" alt="" aria-hidden="true">
       <span>&copy; {{ now.Year }} CyphCube</span>
       <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a>
       <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
