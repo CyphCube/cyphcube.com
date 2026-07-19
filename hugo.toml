@@ -6,7 +6,7 @@ title = "CyphCube"
   tagline = "Infrastructure for the onchain era."
   description = "CyphCube is a blockchain development studio building protocols, tooling, and infrastructure for the decentralized web."
   github = "https://github.com/CyphCube"
-  email = "hello@cyphcube.com"
+  email = "info@cyphcube.com"
 
 [[params.projects]]
   name = "Cube Protocol"
