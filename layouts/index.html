@@ -10,13 +10,18 @@
 </head>
 <body>
 
+  {{ $e := .Site.Params.ethwei }}
+
   <header class="hero">
     <nav class="topnav">
       <span class="logo">
         <span class="logo-mark" aria-hidden="true"></span>
         CyphCube
       </span>
-      <a class="nav-link" href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a>
+      <div class="nav-links">
+        <a class="nav-link" href="#ethwei">About Ethwei</a>
+        <a class="nav-link" href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a>
+      </div>
     </nav>
 
     <div class="hero-content">
@@ -24,23 +29,56 @@
       <p class="tagline">{{ .Site.Params.tagline }}</p>
       <p class="lede">{{ .Site.Params.description }}</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#projects">View Projects</a>
+        <a class="btn btn-primary" href="#ethwei">About Ethwei</a>
         <a class="btn btn-secondary" href="mailto:{{ .Site.Params.email }}">Get in Touch</a>
       </div>
     </div>
   </header>
 
   <main>
-    <section id="projects" class="projects">
-      <h2>Projects</h2>
-      <div class="project-grid">
-        {{ range .Site.Params.projects }}
-        <a class="project-card" href="{{ .link }}" target="_blank" rel="noopener">
-          <div class="project-card-top">
-            <h3>{{ .name }}</h3>
-            <span class="status">{{ .status }}</span>
-          </div>
+    <section id="ethwei" class="ethwei">
+      <div class="section-head">
+        <h2>About Ethwei</h2>
+        <p class="ethwei-tagline">&ldquo;{{ $e.tagline }}&rdquo;</p>
+      </div>
+
+      <p class="ethwei-intro">{{ $e.intro }}</p>
+
+      <div class="stat-grid">
+        {{ range $e.stats }}
+        <div class="stat-tile">
+          <span class="stat-value">{{ .value }}</span>
+          <span class="stat-label">{{ .label }}</span>
+        </div>
+        {{ end }}
+      </div>
+
+      <div class="pillar-grid">
+        {{ range $e.pillars }}
+        <div class="pillar-card">
+          <h3>{{ .title }}</h3>
           <p>{{ .description }}</p>
+        </div>
+        {{ end }}
+      </div>
+
+      <div class="callout">
+        <p>{{ $e.stablecoin }}</p>
+      </div>
+
+      <div class="status-block">
+        <div class="status-dot" aria-hidden="true"></div>
+        <div>
+          <p>{{ $e.status }}</p>
+          <p class="validator-note">{{ $e.validator }}</p>
+        </div>
+      </div>
+
+      <div class="link-grid">
+        {{ range $e.links }}
+        <a class="link-card" href="{{ .url }}" target="_blank" rel="noopener">
+          <span class="link-label">{{ .label }}</span>
+          <span class="link-sublabel">{{ .sublabel }}</span>
         </a>
         {{ end }}
       </div>
