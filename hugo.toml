@@ -3,79 +3,38 @@ languageCode = "en-us"
 title = "CyphCube"
 
 [params]
-  tagline = "Builders of Ethwei — a boring and simple blockchain."
-  description = "CyphCube is the team behind Ethwei, a Proof-of-Stake blockchain built on Cosmos SDK that keeps things boring, simple, and secure."
+  tagline = "Building the Ethwei ecosystem."
+  description = "CyphCube builds Ethwei, a Proof-of-Stake blockchain on Cosmos SDK, and the products around it."
   github = "https://github.com/CyphCube"
   email = "info@cyphcube.com"
 
-  [params.ethwei]
-    tagline = "A boring and simple blockchain is a good blockchain."
-    intro = "Ethwei is a Proof-of-Stake blockchain built on one conviction: the most trustworthy money just works — predictable, secure, free of unnecessary complexity. Like Bitcoin, but you can stake it."
-    stablecoin = "Ethwei welcomes only real, fully USD-backed stablecoins — no algorithmic or synthetic assets."
-    status = "Live on testnet with a multi-validator network (CyphCube-1 + CyphCube-2), a public block explorer, and Keplr wallet support (chain-id ethwei-testnet-1). Mainnet in preparation."
-    validator = "Delegate to CyphCube-2, currently 5% commission — or run your own validator."
-    site = "https://ethwei.com"
-    docs = "https://docs.ethwei.com"
-    explorer = "https://explorer.ethwei.com/testnet"
-    rpc = "https://rpc-testnet.ethwei.com"
-    api = "https://api-testnet.ethwei.com"
+  [[params.projects]]
+    name = "Ethwei"
+    description = "A Proof-of-Stake blockchain built on Cosmos SDK. \"A boring and simple blockchain is a good blockchain\" — like Bitcoin, but stakeable."
 
-    [[params.ethwei.pillars]]
-      title = "Simple by design"
-      description = "No bridges, no inter-chain messaging, minimal module surface. NFT, group, authz, feegrant, and mint modules removed to keep the attack surface small."
-
-    [[params.ethwei.pillars]]
-      title = "Fixed, honest supply"
-      description = "7B ETE genesis, 10B ETE hard cap — enforced in code against actual on-chain supply, so it cannot be exceeded. Fixed 100M ETE/year emission for 30 years, entirely to stakers, 0% community tax."
-
-    [[params.ethwei.pillars]]
-      title = "Secure"
-      description = "Built on battle-tested Cosmos SDK with stock, unmodified governance. The custom emission engine has passed two AI review passes that fixed real high-severity bugs, with an independent human audit planned before mainnet."
-
-    [[params.ethwei.pillars]]
-      title = "Built for everyone"
-      description = "Grandma-friendly: simple enough for anyone to hold, send, and stake."
-
-    [[params.ethwei.stats]]
-      label = "Genesis supply"
-      value = "7B ETE"
-
-    [[params.ethwei.stats]]
-      label = "Hard cap"
-      value = "10B ETE"
-
-    [[params.ethwei.stats]]
-      label = "Emission"
-      value = "100M ETE / yr, 30 yrs"
-
-    [[params.ethwei.stats]]
-      label = "Community tax"
-      value = "0%"
-
-    [[params.ethwei.links]]
-      label = "ethwei.com"
-      sublabel = "Chain site & blog"
+    [[params.projects.links]]
+      label = "Website"
+      icon = "globe"
       url = "https://ethwei.com"
 
-    [[params.ethwei.links]]
-      label = "docs.ethwei.com"
-      sublabel = "Documentation"
+    [[params.projects.links]]
+      label = "Docs"
+      icon = "docs"
       url = "https://docs.ethwei.com"
 
-    [[params.ethwei.links]]
-      label = "Block explorer"
-      sublabel = "explorer.ethwei.com/testnet"
+    [[params.projects.links]]
+      label = "Explorer"
+      icon = "explorer"
       url = "https://explorer.ethwei.com/testnet"
 
-    [[params.ethwei.links]]
-      label = "Testnet RPC"
-      sublabel = "rpc-testnet.ethwei.com"
-      url = "https://rpc-testnet.ethwei.com"
+  [[params.projects]]
+    name = "Coinbroo"
+    description = "The native DEX of the Ethwei ecosystem. Built on Hyperliquid with deep liquidity and security — trade on Coinbroo to earn ETE rewards."
 
-    [[params.ethwei.links]]
-      label = "Testnet API"
-      sublabel = "api-testnet.ethwei.com"
-      url = "https://api-testnet.ethwei.com"
+    [[params.projects.links]]
+      label = "Website"
+      icon = "globe"
+      url = "https://coinbroo.com"
 
 [markup]
   [markup.goldmark]

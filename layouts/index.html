@@ -10,8 +10,6 @@
 </head>
 <body>
 
-  {{ $e := .Site.Params.ethwei }}
-
   <header class="hero">
     <nav class="topnav">
       <span class="logo">
@@ -19,7 +17,7 @@
         CyphCube
       </span>
       <div class="nav-links">
-        <a class="nav-link" href="#ethwei">About Ethwei</a>
+        <a class="nav-link" href="#projects">Projects</a>
         <a class="nav-link" href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a>
       </div>
     </nav>
@@ -29,57 +27,41 @@
       <p class="tagline">{{ .Site.Params.tagline }}</p>
       <p class="lede">{{ .Site.Params.description }}</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#ethwei">About Ethwei</a>
+        <a class="btn btn-primary" href="#projects">View Projects</a>
         <a class="btn btn-secondary" href="mailto:{{ .Site.Params.email }}">Get in Touch</a>
       </div>
     </div>
   </header>
 
   <main>
-    <section id="ethwei" class="ethwei">
+    <section id="projects" class="projects">
       <div class="section-head">
-        <h2>About Ethwei</h2>
-        <p class="ethwei-tagline">&ldquo;{{ $e.tagline }}&rdquo;</p>
+        <h2>Projects</h2>
       </div>
 
-      <p class="ethwei-intro">{{ $e.intro }}</p>
-
-      <div class="stat-grid">
-        {{ range $e.stats }}
-        <div class="stat-tile">
-          <span class="stat-value">{{ .value }}</span>
-          <span class="stat-label">{{ .label }}</span>
+      <div class="projects-grid">
+        {{ range .Site.Params.projects }}
+        <div class="project-card">
+          <div class="project-card-head">
+            <span class="project-mark" aria-hidden="true">{{ substr .name 0 1 }}</span>
+            <h3>{{ .name }}</h3>
+          </div>
+          <p class="project-desc">{{ .description }}</p>
+          <div class="project-links">
+            {{ range .links }}
+            <a class="project-link" href="{{ .url }}" target="_blank" rel="noopener" title="{{ .label }}">
+              {{ if eq .icon "globe" }}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/></svg>
+              {{ else if eq .icon "docs" }}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17Z"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/></svg>
+              {{ else if eq .icon "explorer" }}
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M15 9l-2 6-6 2 2-6 6-2Z"/></svg>
+              {{ end }}
+              <span>{{ .label }}</span>
+            </a>
+            {{ end }}
+          </div>
         </div>
-        {{ end }}
-      </div>
-
-      <div class="pillar-grid">
-        {{ range $e.pillars }}
-        <div class="pillar-card">
-          <h3>{{ .title }}</h3>
-          <p>{{ .description }}</p>
-        </div>
-        {{ end }}
-      </div>
-
-      <div class="callout">
-        <p>{{ $e.stablecoin }}</p>
-      </div>
-
-      <div class="status-block">
-        <div class="status-dot" aria-hidden="true"></div>
-        <div>
-          <p>{{ $e.status }}</p>
-          <p class="validator-note">{{ $e.validator }}</p>
-        </div>
-      </div>
-
-      <div class="link-grid">
-        {{ range $e.links }}
-        <a class="link-card" href="{{ .url }}" target="_blank" rel="noopener">
-          <span class="link-label">{{ .label }}</span>
-          <span class="link-sublabel">{{ .sublabel }}</span>
-        </a>
         {{ end }}
       </div>
     </section>
