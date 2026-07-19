@@ -10,7 +10,7 @@ title = "CyphCube"
 
   [[params.projects]]
     name = "Ethwei"
-    logo = "/images/projects/ethwei.jpg"
+    logo = "/images/projects/ethwei.png"
     description = "A Proof-of-Stake blockchain built on Cosmos SDK. \"A boring and simple blockchain is a good blockchain\" — like Bitcoin, but stakeable."
 
     [[params.projects.links]]
@@ -30,7 +30,7 @@ title = "CyphCube"
 
   [[params.projects]]
     name = "Coinbroo"
-    logo = "/images/projects/coinbroo.jpg"
+    logo = "/images/projects/coinbroo.png"
     description = "The native DEX of the Ethwei ecosystem. Built on Hyperliquid with deep liquidity and security — trade on Coinbroo to earn ETE rewards."
 
     [[params.projects.links]]
